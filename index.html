@@ -13,6 +13,34 @@
     }">
         <button x-on:click="getData">Send get request</button>
         Data returned: <strong x-text='responsedata["animal"].name'>Placeholder</strong>
+            
+    <script type="text/javascript">
+        google.load('search', '1');
+        google.setOnLoadCallback(OnLoad);
+        var search;
+    
+        keyword = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random')).json();
+        function OnLoad()
+        {
+            search = new google.search.ImageSearch();
+    
+            search.setSearchCompleteCallback(this, searchComplete, null);
+    
+            search.execute(keyword);
+        }
+    
+        function searchComplete()
+        {
+            if (search.results && search.results.length > 0)
+            {
+                var rnd = Math.floor(Math.random() * search.results.length);
+
+                document.getElementById("animal_image").src = search.results[rnd]['url'];
+                
+            }
+        }
+    </script>
+    <img id="animal_image" src="" alt="">
     </div>
     
 </body>
