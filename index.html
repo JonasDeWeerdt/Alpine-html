@@ -14,31 +14,10 @@
         <button x-on:click="getData">Send get request</button>
         Data returned: <strong x-text='responsedata["animal"].name'>Placeholder</strong>
             
-    <script type="text/javascript">
-        google.load('search', '1');
-        google.setOnLoadCallback(OnLoad);
-        var search;
-    
-        keyword = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random')).json();
-        function OnLoad()
-        {
-            search = new google.search.ImageSearch();
-    
-            search.setSearchCompleteCallback(this, searchComplete, null);
-    
-            search.execute(keyword);
-        }
-    
-        function searchComplete()
-        {
-            if (search.results && search.results.length > 0)
-            {
-                var rnd = Math.floor(Math.random() * search.results.length);
-
-                document.getElementById("animal_image").src = search.results[rnd]['url'];
-                
-            }
-        }
+        <script type="text/javascript">
+        this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random')).json();
+        animallist = ["https://www.pexels.com/@leo-sam-162268628/","https://www.pexels.com/photo/close-up-portrait-of-lion-247502/","https://www.pexels.com/photo/closeup-photography-of-wold-lying-on-ground-2361/","https://www.pexels.com/photo/porcupine-holding-leaf-11961230/","https://www.pexels.com/photo/cheetah-on-top-of-brown-tree-branch-2274018/","https://www.pexels.com/photo/close-up-photography-of-giraffe-802112/","https://www.pexels.com/photo/close-up-photography-of-giraffe-802112/","https://www.pexels.com/photo/close-up-photo-of-gorilla-913652/","https://www.pexels.com/photo/close-up-photography-of-tiger-792381/","https://www.pexels.com/photo/gray-koala-bear-hugging-tree-branch-2610309/","https://www.pexels.com/photo/animal-big-big-cat-blur-235674/","https://www.pexels.com/photo/view-of-elephant-in-water-247431/","https://www.pexels.com/photo/close-up-photography-of-a-blue-and-yellow-macaw-12715161/","https://www.pexels.com/photo/bird-perching-on-tree-branch-312838/","https://www.pexels.com/photo/gray-rhinoceros-in-close-up-photography-16040/","https://www.pexels.com/photo/gray-kangaroo-2573494/","https://www.pexels.com/photo/ostrich-standing-on-green-grass-2078472/","https://www.pexels.com/photo/large-bison-46188/","https://www.pexels.com/photo/a-young-kangaroo-lying-on-gray-sand-7723950/","https://www.pexels.com/photo/a-gray-badger-on-green-grass-10830792/"]
+        document.getElementById("animal_image").src = animallist[responsedata["animal"].id];
     </script>
     <img id="animal_image" src="" alt="">
     </div>
