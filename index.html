@@ -1,8 +1,17 @@
 <html>
 <head>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
 </head>
 <body>
-    <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{
+        responsedata: null,
+        async getData() {
+            this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random')).json();
+            console.log(responsedata)
+        }
+    }">
+    </div>
+    <button @click="getData">Send get request</button>
+        Data returned: <strong x-text="responsedata">Placeholder</strong>
 </body>
 </html>
