@@ -8,7 +8,7 @@
         responsedata: null,
         async getData() {
             this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random')).json();
-            console.log(this.responsedata)
+            console.log(this.responsedata[0].title)
         }
     }">
         <button @click="getData">Send get request</button>
