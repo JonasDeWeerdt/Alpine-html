@@ -28,7 +28,7 @@
         this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?name='+name)).json();
             
         }  
-    "}>
+    }">
 
         <input type="text" x-model="name">
         <button x-on:click="searchData">Search animal</button>
