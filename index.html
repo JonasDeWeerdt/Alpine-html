@@ -21,6 +21,16 @@
         document.getElementById("animal_image").setAttribute(src,animallist[responsedata["animal"].id]);    </script>
     <img id="animal_image" src="" alt="">
     </div>
-    
+        <div x-data="{
+        responsedata: null,
+        name: null,
+        async getData() {
+            this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?name='+name)).json();
+            
+        }
+        
+    "}>
+    <input type="text" x-model="name">
+    </div>
 </body>
 </html>
