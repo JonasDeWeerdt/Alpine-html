@@ -25,15 +25,26 @@
         responsedata: {},
         gender: null,
         async searchData() {
-            this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?gender='+this.gender)).json();
+            this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?gender='+this.gender)).json().then(
+                document.getElementById(list).setAttribute('hidden','false');
+            );
             
         }
     }">
 
         <input type="text" x-model="gender">
         <button x-on:click="searchData()">Search animal</button>
-        <ul>
+        <ul id="list" hidden="true">
             <li x-text='responsedata["animals"][0].name'></li>
+            <li x-text='responsedata["animals"][1].name'></li>
+            <li x-text='responsedata["animals"][2].name'></li>
+            <li x-text='responsedata["animals"][3].name'></li>
+            <li x-text='responsedata["animals"][4].name'></li>
+            <li x-text='responsedata["animals"][5].name'></li>
+            <li x-text='responsedata["animals"][6].name'></li>
+            <li x-text='responsedata["animals"][7].name'></li>
+            <li x-text='responsedata["animals"][8].name'></li>
+            <li x-text='responsedata["animals"][9].name'></li>
 
         </ul>
 
