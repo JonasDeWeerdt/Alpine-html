@@ -10,6 +10,7 @@
     <div x-data="{
         responsedata: {},
         async getData() {
+            console.log('i want to be here');
             this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random')).json();
             
         }
@@ -22,6 +23,7 @@
     <div x-data="{
     responsedata: {},
     async searchData(name) {
+        console.log('why am i here');
         this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?name='+name)).json();
             
         }  
