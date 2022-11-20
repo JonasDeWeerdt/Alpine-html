@@ -3,6 +3,7 @@
 
 <head>
     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -14,8 +15,12 @@
             
         }
     }">
-        <button x-on:click="getData">Send get request</button>
-        Data returned: <strong x-text='responsedata["animal"].name'>Placeholder</strong>
+        <button x-on:click="getData">Ask for a random animal</button>
+        <ul>
+            <li>Random animal: <strong x-text='responsedata["animal"].name'></strong></li>
+            <li>Gender: <strong x-text='responsedata["animal"].gender'></strong></li>
+        </ul>
+        
 
 
     </div>
@@ -30,8 +35,8 @@
             
         }
     }">
-
-        <input type="text" x-model="gender">
+        <label for="search">Enter a gender(M=Male,F=Female)</label>
+        <input type="text" x-model="gender" name="search">
         <button x-on:click="searchData()">Search animal</button>
         <ul>
             <li x-text='responsedata["animals"][0].name'></li>
