@@ -23,19 +23,37 @@
 
     <div x-data="{
     responsedata: {},
-    async searchData(name,gender) {
-        this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?name='+name+'&gender='+gender)).json()
+    async searchData(gender) {
+        this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?gender='+gender)).json()
 
 
 
         }  
     }">
 
-        <input type="text" x-model="name" autofocus="autofocus" autocapitalize="off">
         <input type="text" x-model="gender" autofocus="autofocus" autocapitalize="off">
-        <button x-on:click="searchData(name,gender)">Search animal</button>
+        <button x-on:click="searchData(gender)">Search animal</button>
         <ul>
             <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+            <li x-text='responsedata["animals"]'></li>
+
         </ul>
 
 
