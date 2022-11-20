@@ -8,7 +8,7 @@
 <body>
 
     <div x-data="{
-        responsedata: null,
+        responsedata: undefinded,
         async getData() {
             this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random')).json();
             
@@ -20,7 +20,7 @@
 
     </div>
     <div x-data="{
-    responsedata: null,
+    responsedata: undefinded,
     async searchData(name) {
         this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?name='+name)).json();
             
