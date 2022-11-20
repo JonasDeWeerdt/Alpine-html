@@ -25,12 +25,12 @@
         responsedata: {},
         gender: null,
         async searchData() {
-            this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?gender='+gender)).json();
+            this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?gender='+this.gender)).json();
             
         }
     }">
 
-        <input type="text" x-model="gender" autofocus="autofocus" autocapitalize="off">
+        <input type="text" x-model="gender">
         <button x-on:click="searchData()">Search animal</button>
         <ul>
             <li x-text='responsedata["animals"][0].name'></li>
