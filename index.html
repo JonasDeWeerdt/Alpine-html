@@ -23,7 +23,7 @@
 
     <div x-data="{
         responsedata: {},
-        async getData(gender) {
+        async searchData(gender) {
             this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?gender='+gender)).json();
             
         }
