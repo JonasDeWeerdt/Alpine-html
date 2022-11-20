@@ -26,7 +26,6 @@
         gender: null,
         async searchData() {
             this.responsedata = await (await fetch('https://animal-service-jonasdeweerdt.cloud.okteto.net/animal?gender='+this.gender)).json();
-                document.getElementById(list).setAttribute('hidden','false');
             
             
         }
@@ -34,7 +33,7 @@
 
         <input type="text" x-model="gender">
         <button x-on:click="searchData()">Search animal</button>
-        <ul id="list" hidden="true">
+        <ul>
             <li x-text='responsedata["animals"][0].name'></li>
             <li x-text='responsedata["animals"][1].name'></li>
             <li x-text='responsedata["animals"][2].name'></li>
