@@ -42,7 +42,21 @@
 
         </script>
         <img id="animal_image" src="" alt="">
+        <script>
+            url = "https://animal-service-jonasdeweerdt.cloud.okteto.net/animal/random"
+          
+            fetch(url)
+              .then((response) => {
+                respone.json()
+                console.log(response.json())
+              })
 
+              .catch(function(error) {
+                console.log(error);
+              });
+          
+            // ...
+          </script>
     </div>
 </body>
 
