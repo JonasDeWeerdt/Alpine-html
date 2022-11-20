@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css');
+
+* {
+
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'M PLUS 1', sans-serif;
+    color: white;
+    font-size: 0.8rem;
+    background-color: black;
+
+}
+
+body div {
+    background-color: #202120;
+    margin: 20px auto 20px auto;
+    max-width: 100%;
+    min-width: 300px;
+
+
+}
+
+#smallpic {
+    max-width: 100%;
+    position: relative;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+#smallpic:hover {
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+
+nav ul li {
+    list-style-position: inside;
+}
+
+footer {
+    background-color: #4C4C4C;
+    border-radius: 5px;
+
+}
+
+footer i {
+    color: aqua
+}
+
+a {
+    color: white
+}
+
+a:hover {
+    color: red;
+}
+
+.Showonsmall {
+    display: block;
+
+}
+
+.Hideonsmall {
+    display: none;
+}
+
+@media screen and (min-width:641px) {
+    html {
+        font-size: 1.2rem;
+    }
+
+
+
+    body {
+        background-color: black;
+    }
+
+    body div {
+
+        max-width: 100%;
+    }
+
+    #banner {
+        padding: 0 20px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    div div {
+        margin: 0px 20%;
+        border: 3px solid red;
+        border-radius: 5%
+    }
+
+
+
+    .Showonmedium {
+        display: block;
+    }
+
+    .Hideonmedium {
+        display: none;
+    }
+}
+
+@media screen and (min-width:1008px) {
+    html {
+        font-size: 1.6rem;
+    }
+
+    #banner {
+        padding: 0 20px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    body {
+        background-image: url(Images/pexels-markus-spiske-1089438.jpg);
+        background-size: cover;
+        background-position: center bottom;
+        background-attachment: fixed;
+        padding: 20px 0;
+    }
+
+
+    body div {
+        margin: 0 auto;
+        max-width: 900px;
+
+    }
+
+    div div {
+        border: 0px solid #000;
+        margin: 0;
+    }
+
+    nav {
+        padding-left: 30px;
+    }
+
+    .Showonlarge {
+        display: block;
+    }
+
+    .Hideonlarge {
+        display: none;
+    }
+}
